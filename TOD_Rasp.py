@@ -55,10 +55,11 @@ while True:
         
         #Dog deterrent alarm goes through a small cycle of on then off
         buzzer.on()
-        sleep(2)
+        sleep(4)
         buzzer.off()
         
         #Opens camera preview for demo purposes
+        #Sleep is needed to allow the camera to adjust 
         camera.start_preview()
         sleep(5)
         
