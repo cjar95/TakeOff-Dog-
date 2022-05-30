@@ -60,28 +60,28 @@ while True:
         buzzer.off()
         sleep(5)
         
-    #Additional check after alarm to see if motion is still occuring   
-    if pir.motion_detected == True:
+        #Additional check after alarm to see if motion is still occuring   
+        if pir.motion_detected == True:
         
-        #Opens camera preview for demo purposes
-        #Sleep is needed to allow the camera to adjust 
-        camera.start_preview()
-        sleep(5)
+            #Opens camera preview for demo purposes
+            #Sleep is needed to allow the camera to adjust 
+            camera.start_preview()
+            sleep(5)
         
-        #Captures an image saved in documents
-        #Increments Dog[i].jpg
-        camera.capture("Dog%s.jpg" % i)
-        camera.stop_preview()
+            #Captures an image saved in documents
+            #Increments Dog[i].jpg
+            camera.capture("Dog%s.jpg" % i)
+            camera.stop_preview()
         
-        #MQTT publishing of Movement event from topic Dog
-        #This will trigger the particle argon 
-        ourClient.publish("Dog", "Movement")
-        time.sleep(1)
+            #MQTT publishing of Movement event from topic Dog
+            #This will trigger the particle argon 
+            ourClient.publish("Dog", "Movement")
+            time.sleep(1)
         
-        #increments i with each iteration
-        i = i+1
-        sleep(10)
-        pir.wait_for_no_motion(timeout = 10)
+            #increments i with each iteration
+            i = i+1
+            sleep(10)
+            pir.wait_for_no_motion(timeout = 10)
         
     #Condition for when no motion is detected
     if motion_status == 0:
