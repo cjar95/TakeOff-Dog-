@@ -41,15 +41,16 @@ buzzer = Buzzer(17)
 #Creates variable camera from PiCamera library
 camera = PiCamera()
 #Counter allows multiple photos to be taken under Dog name 
-i =0
+i = 0
 
 while True:
     #Creates a variable to track motion status (1 or 0)
     motion_status = GPIO.input(4)
-    sleep(10)
+    #Pauses the script until motion is first detected 
+    pir.wait_for_motion(timeout = None)
     #Condition for when motion is detected
     #Starts a chain of events 
-    if pir.wait_for_motion():
+    if motion_status == 1:
         print(motion_status)
         print("Motion Detected Potential DOG")
         
