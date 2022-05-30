@@ -89,3 +89,7 @@ while True:
         ourClient.publish("Dog", "No_Movement")
         print("No Motion or Dog")
         sleep(120)
+        
+    #Final condition for if motion sensor is not picking up 1 or 0     
+    else 
+        print("The motion sensor is not receieving either 1 or 0 and may not be working properly")
