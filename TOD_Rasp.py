@@ -58,6 +58,10 @@ while True:
         buzzer.on()
         sleep(4)
         buzzer.off()
+        sleep(5)
+        
+    #Additional check after alarm to see if motion is still occuring   
+    if pir.motion_detected == True:
         
         #Opens camera preview for demo purposes
         #Sleep is needed to allow the camera to adjust 
