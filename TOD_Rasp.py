@@ -84,3 +84,4 @@ while True:
         #MQTT publishing of No_Movement event from topic Dog
         ourClient.publish("Dog", "No_Movement")
         print("No Motion or Dog")
+        sleep(120)
